@@ -54,7 +54,14 @@ class СuponsUsersTable extends Entity\DataManager
                     'required' => true,
                     'title'    => Loc::getMessage('OFFICEMAG_COUPONS_USERS_PUBLISH_DATE'),
                 ]
-            )
+            ),
+            new Entity\IntegerField(
+                'DISCOUNT',
+                [
+                    'required' => true,
+                    'title'    => Loc::getMessage('OFFICEMAG_COUPONS_USERS_DISCOUNT'),
+                ]
+            ),
         ];
     }
 }
