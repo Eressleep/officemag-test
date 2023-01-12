@@ -9,6 +9,6 @@
     <form id="js-checkCupon" action="">
         <input name="code" type="text">
         <button type="submit">Проверить код</button>
-        <div id="js-statusCupon">Верный код</div>
+        <div id="js-statusCupon"></div>
     </form>
 </div>

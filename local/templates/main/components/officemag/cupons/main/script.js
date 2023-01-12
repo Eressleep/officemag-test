@@ -46,7 +46,34 @@ BX.ready(function () {
     checkCupon : function (){
       BX.bind(BX('js-checkCupon'), 'submit', function(e) {
         e.preventDefault();
-        console.log(1234)
+        let statusCupon = BX('js-statusCupon');
+        statusCupon.classList.add("hide")
+        const formData = new FormData(e.srcElement);
+        const bxFormData = new BX.ajax.FormData();
+        for(let [name, value] of formData)
+        {
+          bxFormData.append(name, value);
+        }
+
+        BX.ajax.runComponentAction(
+          'officemag:cupons',
+          'checkCupon',
+          {
+            mode: 'class',
+            data: {
+              post: bxFormData.elements
+            },
+          }).then(response => {
+          if(response.status == 'success')
+          {
+            return response.data;
+          }
+        }).then(data => {
+          console.log(data)
+          statusCupon.classList.remove("hide")
+          statusCupon.textContent = data.discount;
+
+        })
       });
     }
   }

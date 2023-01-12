@@ -1,5 +1,5 @@
 # Auth to bitrix
-[site](http://officemag-test.chisto.plus/bitrix/admin/)
+## [site](http://officemag-test.chisto.plus/bitrix/admin/)
 ## login
 ```
 admin
@@ -8,3 +8,4 @@ admin
 ```
 admin12345
 ```
+Установить модуль officemag.module , при локальном тестирование.

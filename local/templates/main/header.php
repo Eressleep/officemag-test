@@ -1,7 +1,6 @@
 <?php
 
-CJSCore::Init(["fx"]);
-CJSCore::Init(["ajax"]);
+CJSCore::Init(['fx', 'ajax']);
 ?>
 
 
