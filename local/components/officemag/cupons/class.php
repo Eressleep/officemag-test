@@ -123,7 +123,7 @@ class Cupons extends CBitrixComponent implements Controllerable, Errorable
 
         if($status->isSuccess())
         {
-            return self::returnAnswer($cupon, $discount);
+            return (new Cupons)->returnAnswer($cupon, $discount);
         }else{
             throw new Exception('Failed to add entry.');
         }
@@ -192,7 +192,7 @@ class Cupons extends CBitrixComponent implements Controllerable, Errorable
      * @return array
      * @throws LoaderException
      */
-    public function getCuponAction()
+    public function getCuponAction(): array
     {
         try {
             Loader::includeModule(self::$muduleName);
@@ -209,7 +209,19 @@ class Cupons extends CBitrixComponent implements Controllerable, Errorable
         }
     }
 
-    public function checkCuponAction($post){
+    /**
+     * Check copun for user.
+     *
+     * @param $post
+     *
+     * @return array
+     * @throws ArgumentException
+     * @throws LoaderException
+     * @throws ObjectPropertyException
+     * @throws SystemException
+     */
+    public function checkCuponAction($post): array
+    {
         Loader::includeModule(self::$muduleName);
         $code = '';
         $user = CurrentUser::get();

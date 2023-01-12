@@ -22,6 +22,9 @@ class СuponsUsersTable extends Entity\DataManager
         return 'COUPONS_USERS';
     }
 
+    /**
+     * @throws SystemException
+     */
     public static function getMap(): array
     {
         return [

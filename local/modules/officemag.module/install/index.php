@@ -138,7 +138,7 @@ class officemag_module extends CModule
      * @throws SqlQueryException
      * @throws SystemException
      */
-    public function UnInstallDB()
+    public function UnInstallDB(): bool
     {
         if (Application::getConnection()->isTableExists(
             Base::getInstance(СuponsUsers::getEntity()->getDataClass())->getDBTableName()
